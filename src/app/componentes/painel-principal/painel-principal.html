@@ -1,0 +1,43 @@
+<main class="container mt-4">
+    <table class="table table-dark table-hover table-striped table-borderLess">
+      <thead class="table-bordered">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Imagem</th>
+          <th scope="col">Produto</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Preço</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        @for (produto of produtos; track produto.id) {
+            <tr>
+                <!-- ID do produto -->
+                <td> {{ produto.id }} </td>
+                
+                <!-- Imagem do produto -->
+                <td>
+                    <img [src]="'assets/img/' + produto.foto" alt="{{produto.produto}}" width="50" height="50">
+                </td>
+                
+                <!-- Nome do produto -->
+                <td> {{ produto.produto }} </td>
+
+                <!-- Descrição do produto -->
+                <td> {{ produto.descricao }} </td>
+                
+                <!-- Preço do produto -->
+                <td> {{ produto.preco }} </td>
+                
+                <!-- Ações - Editar e Deletar -->
+                <td>
+                    <button class="btn btn-primary btn-sm" (click)="editarProduto(produto.id)"> Editar </button>
+                    <button class="btn btn-danger btn-sm" (click)="deletarProduto(produto.id)"> Deletar </button>
+                </td>
+            </tr>
+        }
+      </tbody>
+    </table>
+</main>

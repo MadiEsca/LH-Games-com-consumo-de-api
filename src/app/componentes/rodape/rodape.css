@@ -1,0 +1,6 @@
+footer{
+    width: 100%; /*Faz com que a tag ocupe 100% da largura da tela*/
+    position: fixed; /*Faz com que a tag fique fixa em um local da tela*/
+    left: 0; /*Faz com que a tag fique alinhada a esquerda*/
+    bottom: 0; /*Faz com que a tag fique no final da página*/
+}
